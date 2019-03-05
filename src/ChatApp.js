@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Chat from 'twilio-chat';
 import { Chat as ChatUI } from '@progress/kendo-react-conversational-ui';
-import { URL } from './config'
 
 class ChatApp extends Component {
   constructor(props) {
@@ -26,7 +25,7 @@ class ChatApp extends Component {
   }
 
   componentDidMount() {
-    fetch(`${URL}/chat/token`, {
+    fetch(`${process.env.REACT_APP_TWILIO_API}/chat/token`, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       method: 'POST',
       body: `identity=${encodeURIComponent(this.props.username)}`
