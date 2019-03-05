@@ -8,6 +8,7 @@
     "@progress/kendo-react-inputs": "^2.3.2",
     "@progress/kendo-react-intl": "^2.3.2",
     "@progress/kendo-theme-material": "^2.2.0",
+    "cors": "^2.8.5",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "^2.1.3",

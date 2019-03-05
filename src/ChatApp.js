@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Chat from 'twilio-chat';
 import { Chat as ChatUI } from '@progress/kendo-react-conversational-ui';
+import { URL } from './config'
 
 class ChatApp extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class ChatApp extends Component {
   }
 
   componentDidMount() {
-    fetch('/chat/token', {
+    fetch(`${URL}/chat/token`, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       method: 'POST',
       body: `identity=${encodeURIComponent(this.props.username)}`
@@ -57,7 +58,7 @@ class ChatApp extends Component {
       })
       .then(channel => {
         this.channel = channel;
-        return this.channel.join().catch(() => {});
+        return this.channel.join().catch(() => { });
       })
       .then(() => {
         this.setState({ isLoading: false });
